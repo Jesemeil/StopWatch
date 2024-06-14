@@ -1,10 +1,13 @@
+/* Global styles for body */
 body {
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: hsl(0, 0%, 95%);
+  padding: 20px; /* Add padding for better spacing */
 }
 
+/* Container for stopwatch */
 .stopwatch {
   display: flex;
   flex-direction: column;
@@ -13,23 +16,36 @@ body {
   border-radius: 50px;
   background-color: white;
   padding: 30px;
+  max-width: 600px; /* Limit width for larger screens */
+  width: 100%; /* Ensure full width on smaller screens */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add subtle shadow for depth */
 }
 
+/* Display area for timer */
 .display {
-  font-size: 5rem;
+  font-size: 3rem; /* Reduce font size for smaller screens */
   font-family: monospace;
   font-weight: bold;
   color: hsl(0, 0%, 30%);
   text-shadow: 2px 2px 2px hsl(0, 0%, 0.75);
-  margin-bottom: 25px;
+  margin-bottom: 20px; /* Adjust margin for better spacing */
 }
 
+/* Container for control buttons */
+.controls {
+  display: flex;
+  flex-wrap: wrap; /* Wrap buttons for smaller screens */
+  justify-content: center;
+  gap: 10px; /* Add gap between buttons */
+}
+
+/* Individual control button styles */
 .controls button {
-  font-size: 1.5rem;
+  font-size: 1.2rem; /* Reduce font size for smaller screens */
   font-weight: bold;
   padding: 10px 20px;
   margin: 5px;
-  min-width: 125px;
+  min-width: 100px; /* Adjust min-width for smaller screens */
   border: none;
   border-radius: 10px;
   cursor: pointer;
@@ -37,6 +53,7 @@ body {
   transition: background-color 0.5s ease;
 }
 
+/* Specific button styles */
 .start-button {
   background-color: hsl(115, 100%, 40%);
 }
@@ -59,4 +76,17 @@ body {
 
 .reset-button:hover {
   background-color: hsl(205, 90%, 55%);
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+  .display {
+    font-size: 2.5rem; /* Further reduce font size for very small screens */
+  }
+
+  .controls button {
+    font-size: 1rem; /* Adjust font size for smaller screens */
+    padding: 8px 16px; /* Adjust padding for smaller buttons */
+    min-width: 80px; /* Adjust min-width for smaller buttons */
+  }
 }
